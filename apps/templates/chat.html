@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코코넛톡 - 채팅</title>
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+    <form class="chat_h">
+        <h2>정민우</h2>
+    </form>
+    <ul class="chat-list">
+    {% for text in texts %}
+        <li>{{ text.content }}</li>
+    {% endfor %}
+    </ul>
+    <form class="text_area" action="/chat" method="POST">
+        <textarea name="content" class="text"></textarea>
+        <p"><input type="submit" value="전송" class="text_btn"></p>
+        </form>
+        <form action="/delete_all" method="POST">
+            <p"><input type="submit" value="전체 삭제" class="text_btn"></p>
+        </form> 
+</body>
+</html>
